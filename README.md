@@ -114,3 +114,29 @@ Bugs and Issues
 [Troubleshooting]:   https://github.com/shadowsocks/shadowsocks/wiki/Troubleshooting
 [Wiki]:              https://github.com/shadowsocks/shadowsocks/wiki
 [Windows]:           https://github.com/shadowsocks/shadowsocks-csharp
+### 我平常的使用方法
+
+* 购买[搬瓦工服务器](https://bwh1.net/)
+* 安装CentOS系统（也可以使用Ubuntu）
+* ```yum install python-setuptools && easy_install pip```
+* ```pip install shadowsocks```
+* ```cd etc```
+* ```vi shadowsocks.json```
+* 
+```Json
+{
+"server":"******",
+"server_port":443,
+"password":"******",
+"timeout":300,
+"method":"rc4-md5", // 据说速度最快
+"fast_open":false,
+"local_address": "127.0.0.1", 
+"local_port":1080,
+}
+```
+* 
+```
+ssserver -c /etc/shadowsocks.json -d start
+// 开启shadowsocks服务
+```
